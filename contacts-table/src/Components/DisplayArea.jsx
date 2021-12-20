@@ -13,12 +13,12 @@ export default function DisplayArea(props)
             <tr>
                 <th>ID</th>
                 <th>Name</th>
-                <th>Email</th>
+                <th><Age></Age></th>
                 <th className="delete-btn">Delete?</th>
             </tr>
             
             {
-               contextData.contactState.arr.map(elem=><TableRow id={elem.id} name={elem.name} email={elem.email}/>)
+               contextData.contactState.arr.map(elem=><TableRow id={elem.id} name={elem.name} age={elem.age}/>)
             }
         </table>
 }

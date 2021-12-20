@@ -8,7 +8,7 @@ export default function TableRow(props)
     <tr>
         <td>{props.id}</td>
         <td>{props.name}</td>
-        <td>{props.email}</td>
+        <td>{props.age}</td>
         <td class="del-td">
             <button className="del-btn" 
             onClick={()=>  contextData.dispatch(["DEL",{id:props.id}])}>🗑  Remove User</button>

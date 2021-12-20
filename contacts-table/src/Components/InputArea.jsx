@@ -4,12 +4,12 @@ import ContactContext from "./Context";
 export default function InputArea(props) {
   let contextData = useContext(ContactContext);
   let nameRef = useRef("");
-  let emailRef = useRef("");
+  let ageRef = useRef("");
   let [check, setCheck] = useState(true);
 
   function updateData() {
     let currID;
-    if (nameRef.current.value !== "" && emailRef.current.value !== "") {
+    if (nameRef.current.value !== "" && ageRef.current.value !== "") {
       if (contextData.contactState.arr.length === 0) currID = 1;
       else
         currID =
@@ -21,12 +21,12 @@ export default function InputArea(props) {
         {
           id: currID,
           name: nameRef.current.value,
-          email: emailRef.current.value,
+          age: ageRef.current.value,
         },
       ]);
     }
     nameRef.current.value = "";
-    emailRef.current.value = "";
+    ageRef.current.value = "";
     setCheck(true);
   }
   return (
@@ -39,11 +39,10 @@ export default function InputArea(props) {
           placeholder="Enter name"
         />
         <input
-          type="email"
-          ref={emailRef}
-          className="contact-email"
-          placeholder="Enter email address"
-         
+          type="number"
+          ref={ageRef}
+          className="contact-age"
+          placeholder="Enter Age"
           onChange={(e) => {
             if (e.target.reportValidity() && nameRef.current.value !== "")
               setCheck(false);
