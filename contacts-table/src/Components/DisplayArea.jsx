@@ -13,7 +13,7 @@ export default function DisplayArea(props)
             <tr>
                 <th>ID</th>
                 <th>Name</th>
-                <th><Age></Age></th>
+                <th>Age</th>
                 <th className="delete-btn">Delete?</th>
             </tr>
             
